@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/foods")
-@CrossOrigin(origins = "http://localhost:5174", allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174", "https://kitchin-frontend.onrender.com"}, allowCredentials = "true")
 public class FoodController {
 
     private final FoodRepository foodRepository;
@@ -26,7 +26,6 @@ public class FoodController {
 
   @PostMapping
     public ResponseEntity<FoodItem> createFood(@RequestBody FoodItem foodItem) {
-        // 🔍 ログを追加
         System.out.println("受け取ったデータ -> name: " + foodItem.getName());
         
         FoodItem savedItem = foodRepository.save(foodItem);
@@ -35,7 +34,6 @@ public class FoodController {
 
     @PutMapping("/{id}")
     public ResponseEntity<FoodItem> updateFood(@PathVariable Long id, @RequestBody FoodItem updatedItem) {
-        // 🔍 ログを追加
         System.out.println("更新データ -> id: " + id + ", name: " + updatedItem.getName());
 
         Optional<FoodItem> optionalFood = foodRepository.findById(id);

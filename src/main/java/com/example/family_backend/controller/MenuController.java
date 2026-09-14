@@ -9,12 +9,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/menus")
-@CrossOrigin(origins = "http://localhost:5174", allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174", "https://kitchin-frontend.onrender.com"}, allowCredentials = "true")
 public class MenuController {
 
     private final MenuRepository menuRepository;
 
-    public MenuController(MenuRepository menuRepository) {
+    public MenuRepository(MenuRepository menuRepository) {
         this.menuRepository = menuRepository;
     }
 

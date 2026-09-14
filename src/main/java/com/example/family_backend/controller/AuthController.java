@@ -9,7 +9,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:5174", allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174", "https://kitchin-frontend.onrender.com"}, allowCredentials = "true")
 public class AuthController {
 
     @PostMapping("/login")
