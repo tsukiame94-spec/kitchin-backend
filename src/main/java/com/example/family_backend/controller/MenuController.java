@@ -14,7 +14,7 @@ public class MenuController {
 
     private final MenuRepository menuRepository;
 
-    public MenuRepository(MenuRepository menuRepository) {
+    public MenuController(MenuRepository menuRepository) {
         this.menuRepository = menuRepository;
     }
 
